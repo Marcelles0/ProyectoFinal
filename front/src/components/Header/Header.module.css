@@ -36,7 +36,7 @@ header.menuSticky a {
 }
 header.menuSticky button {
     color: #000;
-    background-color: #ffffff
+    background-color: #ffffff00
 }
 a{
     color: var(--white);
@@ -122,7 +122,7 @@ li{
     width: 100%;
     position: relative;
     overflow-x: hidden;
-    background-color: #6141e2;
+    background-color: #6141e200;
 }
 
 @media only screen and (max-width: 1024px) {
