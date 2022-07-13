@@ -1,0 +1,89 @@
+[{
+  "_id": {
+    "$oid": "62cd7fad8a749e8b921020c5"
+  },
+  "userName": "Example",
+  "email": "example@gmail.com",
+  "password": "$2b$10$00bQoQma8xF8D2CoJ4UuQunvHhwIc3wsANPAASq.yS.bpRw.9bu7.",
+  "role": 1
+},{
+  "_id": {
+    "$oid": "62ce363662703b0cccb81ab4"
+  },
+  "userName": "marshall",
+  "email": "asdas@gmail.com",
+  "password": "$2b$10$Bqr8C67jEp6ErC6kjmITvukJnXZDjZVQBEQBPEgTtDTYdzrGnBbY.",
+  "role": 1
+},{
+  "_id": {
+    "$oid": "62ce36e562703b0cccb81ab6"
+  },
+  "userName": "asdgfsdg",
+  "email": "qwerasd@gmail.com",
+  "password": "$2b$10$MVHfSHRk0R3yvqctuW21B.IPSqPj6s/Os9TWQQFQvsyyuroySrQYa",
+  "role": 1
+},{
+  "_id": {
+    "$oid": "62ce374f62703b0cccb81ab8"
+  },
+  "userName": "asde123",
+  "email": "123123@gmail.com",
+  "password": "$2b$10$YMIo1hWrjBlKJvK8DiL0nugQUb.nCRGkXYbspMvYpF/tW3mL9mpfW",
+  "role": 1
+},{
+  "_id": {
+    "$oid": "62ce38be62703b0cccb81abb"
+  },
+  "userName": "mshark0",
+  "email": "ssigward0@indiegogo.com",
+  "password": "$2b$10$iyFZd3DXAElOAsL2PFs.7.Q2cvekR1oz1D4X8ne53QmV.TW3LR9ZG",
+  "role": 1
+},{
+  "_id": {
+    "$oid": "62ce38d462703b0cccb81abd"
+  },
+  "userName": "cbulfit1",
+  "email": "fforsythe1@amazon.de",
+  "password": "$2b$10$4Pf/N/FpzKZMLkVp3W3i6OMaKjlImixUMbuyfXSPQ.wvZLzGUFVWS",
+  "role": 1
+},{
+  "_id": {
+    "$oid": "62ce38ea62703b0cccb81abf"
+  },
+  "userName": "btroyes2",
+  "email": "tros2@jalbum.net",
+  "password": "$2b$10$FTC7CgLCrkPvBtcaDi8q5.7j95PTMeMNeEf0bnZpLIjLsErLf.yTC",
+  "role": 1
+},{
+  "_id": {
+    "$oid": "62ce390662703b0cccb81ac1"
+  },
+  "userName": "tbubeer3",
+  "email": "ghairyes3@slate.com",
+  "password": "$2b$10$CnPcxTtArdMRf9yDAGqC8.K4Sv6Kos8vkSelNPVNNvEEUUk01yBB6",
+  "role": 1
+},{
+  "_id": {
+    "$oid": "62ce391662703b0cccb81ac3"
+  },
+  "userName": "tgirardetti5",
+  "email": "vmoreland5@imgur.com",
+  "password": "$2b$10$dV0KwdJzJBk2ZRH0A69G5uD64o7/iefgCDRtk6JJ8vfuPjCn68RDO",
+  "role": 1
+},{
+  "_id": {
+    "$oid": "62ce392a62703b0cccb81ac5"
+  },
+  "userName": "bbillows6",
+  "email": "jgarrals6@columbia.edu",
+  "password": "$2b$10$T4W5aHP9JYRmPsUfJ8u2quP2P1D8MblpyZdB8OXQuVSLlRAb7trne",
+  "role": 1
+},{
+  "_id": {
+    "$oid": "62ce393e62703b0cccb81ac7"
+  },
+  "userName": "jbessent7",
+  "email": "twillcox7@cloudflare.com",
+  "password": "$2b$10$z8yxt/gpuYzdN0mMyIU3zeexB3G/kxVJFZ4i/kHHsiXzIa9DdfVBe",
+  "role": 1
+}]
