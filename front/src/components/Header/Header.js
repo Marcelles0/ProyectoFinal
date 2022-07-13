@@ -54,14 +54,27 @@ export default function Header() {
                 </ul>
             </div>
             <div className={styleHeader.login}>
-                <ul>
-                    <li>
-                        <Link to={`/login`}>Login</Link>
-                    </li>
-                    <li>
-                        <Link to={`/register`}>Register</Link>
-                    </li>
-                </ul>
+                
+                    {
+                    (localStorage.getItem("token")!==null)&&(localStorage.getItem("token")!==undefined)
+                    ? (<ul><li><Link to={`/dashboard`}>Dashboard</Link></li><li>
+                        <button type="button" onClick={()=>{
+                            localStorage.removeItem("token");
+                            localStorage.removeItem("user");
+                            window.location.href="/login";
+                        }} className={styleHeader.buttonLogin}>Logout</button></li></ul>)
+                    : (
+                    <ul>
+                        <li>
+                            <Link to={`/login`}>Login</Link>
+                        </li>
+                        <li>
+                            <Link to={`/register`}>Register</Link>
+                        </li>
+                    </ul>
+                    )
+                    }
+                    
             </div>
             <div className={styleHeader.buttonResponsive} >
                 <button className={styleHeader.buttonCollapsed} aria-expanded="false" onClick={openMenu}>

@@ -52,7 +52,7 @@ section h1{
 .section div{
     margin: 1em auto;
 }
-.buttonAppTranslate{
+.buttonDashboard{
     background: linear-gradient(to right, #7d4ac7 0%, #a733bb 100%);
     color: var(--white);
     padding: 15px 35px;
@@ -65,7 +65,7 @@ section h1{
     letter-spacing: 1px;
     margin: 10px 0;
 }
-.buttonAppTranslate:hover{
+.buttonDashboard:hover{
     background: linear-gradient(to left, #7d4ac7 0%, #a733bb 100%);
 }
 input.checkbox{

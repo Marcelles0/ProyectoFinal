@@ -79,8 +79,8 @@ export default function Home (){
                     </div>
                     <div className={styleHome.contentCircle}>
                         <div className={`${styleHome.cirItem} ${styleHome.cirItem1} ${styleHome.active}`}>
-                            <h2 className={styleHome.title}><span>Automate</span></h2>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            <h2 className={styleHome.title}><span>Logeate</span></h2>
+                            <p>Regístrate e inicia sesión para poder disfrutar de las ventajas del traductor de JavaScript</p>
                             
                         </div>
                         <div className={`${styleHome.cirItem} ${styleHome.cirItem2}`}>

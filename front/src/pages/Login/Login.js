@@ -14,8 +14,8 @@ export default function Login (){
       //Funcion para insertar o modificar el registro al endpoint POST / PUT
       const handleSubmit = (e) => {
         e.preventDefault();
-    
-        fetch(`http://localhost:8000/login/`, {
+        console.log(formValues);
+        fetch(`http://localhost:8001/login/`, {
           method: "POST",
           body: JSON.stringify(formValues),
           headers: {
@@ -24,14 +24,17 @@ export default function Login (){
         })
           .then((res) => res.json())
           .then((data) => {
+            //console.log(data.data.token)
             //Esta parte adaptarla para node con express
-            // if(data.code===401){
-            //   alert('Error, datos incorrecto');
-            // }
-            // else{
-            //   localStorage.setItem("token", data.token);
-            //   navigate(`/dashboard`, { replace: true });
-            // }
+            if(data.code===401){
+              alert('Error, datos incorrecto');
+            }
+            else{
+                localStorage.setItem("token", data.data.token);
+                localStorage.setItem("user", data.data.user);
+              window.location.href="/dashboard";
+              //navigate(`/dashboard`, { replace: true });
+            }
             //FIN Esta parte adaptarla para node con express
             
           });
@@ -55,7 +58,7 @@ export default function Login (){
                             <div>
                                 <div>
                                     <div>Email Address</div>
-                                    <input id="Email" type="text" placeholder="Email" name="email" onChange={handleInputChange} required></input>
+                                    <input id="Email" type="text" placeholder="Email" name="email" onChange={handleInputChange} required autoFocus></input>
                                 </div>
                                 <div>
                                     <div>Password</div>

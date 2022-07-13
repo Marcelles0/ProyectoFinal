@@ -105,6 +105,21 @@ li{
 .navbarExpanded ul li{
     margin: 1em;
 }
+.buttonLogin{
+    color: var(--white);
+    text-align: left;
+    font-weight: 600;
+    font-size: 1em;
+    list-style: none;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    background-color: #6141e2;
+}
 
 @media only screen and (max-width: 1024px) {
     .logo img{

@@ -5,8 +5,10 @@ import Contact from "./pages/Contact/Contact";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import AppTranslate from "./pages/AppTranslate/AppTranslate";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import { AuthProvider } from "./components/AuthContext";
 import "./App.css";
 
 function App() {
@@ -17,7 +19,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/app-translate" element={<AppTranslate />} />
+        
+        <Route path="/app-translate" element={<AuthProvider><AppTranslate /></AuthProvider>} />
+        <Route path="/dashboard" element={<AuthProvider><Dashboard /></AuthProvider>} />
       </Route>
     </Routes>
   );

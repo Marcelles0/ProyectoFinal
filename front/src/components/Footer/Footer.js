@@ -4,7 +4,7 @@ import styleFooter from "./Footer.module.css";
 
 import imgLogo from "../../assets/image/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook,faTwitter,faGoogle,faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook,faTwitter,faGoogle,faInstagram, faGit } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer (){
     return (
@@ -136,6 +136,10 @@ export default function Footer (){
                         </li>
                         <li>
                             <a href ="https://www.instagram.com/" target="_blank" rel="noreferrer noopener"><FontAwesomeIcon icon={faInstagram} />
+                            </a>
+                        </li>
+                        <li>
+                            <a href ="https://github.com/Marcelles0" target="_blank" rel="noreferrer noopener"><FontAwesomeIcon icon={faGit} />
                             </a>
                         </li>
                     </ul>
