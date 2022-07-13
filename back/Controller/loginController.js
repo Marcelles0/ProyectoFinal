@@ -166,4 +166,24 @@ router.put('/dashboard/:email', async (req, res)=>{
     } */
 });
 
+router.delete("/:email", (req, res) => {
+    let id = req.params.id;
+    Model.findByIdAndDelete(id)
+        .then((result) => {
+            let data = { ...result._doc };
+            res.status(200).json({
+            status: "succeeded",
+            data,
+            error: null,
+        });
+    })
+    .catch((error) =>
+        res.status(404).json({
+            status: "failed",
+            data,
+            error: error.message,
+        })
+    );
+});
+
 module.exports = router;

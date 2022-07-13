@@ -81,3 +81,18 @@ input.checkbox{
 .blueLink div{
     text-align: center;
 }
+.fixButton {
+    background: linear-gradient(to right, #7d4ac7 0%, #a733bb 100%);
+    color: var(--white);
+    padding: 10px 35px;
+    width: 100%;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    letter-spacing: 1px;
+}
+.fixButton:hover{
+    background: linear-gradient(to left, #7d4ac7 0%, #a733bb 100%);
+}

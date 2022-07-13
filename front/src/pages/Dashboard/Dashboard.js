@@ -40,6 +40,17 @@ export default function Dashboard (){
         });
       };
 
+      const handleSubmit2 = (e) => {
+        e.preventDefault();
+        fetch(`http://localhost:8001/dashboard/${email}`,{
+          method: "DELETE",
+          body: JSON.stringify(formValues),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+      };
+
     return (
         <div className={styleDashboard.section}>
             <section>
@@ -75,8 +86,13 @@ export default function Dashboard (){
                                     <input id="password" type="password" name="password" placeholder="New Password" onChange={handleInputChange} />
                                 </div>
                             </div>
-                            <div><button type="submit">Update</button></div>
+                            <div><button type="submit" className={styleDashboard.fixButton}>Update</button></div>
                         </div>
+                    </form>
+                    <form onSubmit={handleSubmit2}>
+                        
+                            <div><button type="submit" className={styleDashboard.fixButton}>Delete Account</button></div>
+                    
                     </form>
                 </div>
             </section>
