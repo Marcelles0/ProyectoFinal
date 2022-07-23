@@ -15,7 +15,7 @@ export default function Login (){
       const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formValues);
-        fetch(`http://localhost:8001/login/`, {
+        fetch(`http://localhost:8000/login/`, {
           method: "POST",
           body: JSON.stringify(formValues),
           headers: {

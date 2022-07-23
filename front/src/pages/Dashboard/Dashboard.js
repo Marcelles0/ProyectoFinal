@@ -20,7 +20,7 @@ export default function Dashboard (){
     let email = localStorage.user;
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:8001/dashboard/${email}`,{
+        fetch(`http://localhost:8000/dashboard/${email}`,{
           method: "PUT",
           body: JSON.stringify(formValues),
           headers: {
@@ -42,7 +42,7 @@ export default function Dashboard (){
 
       const handleSubmit2 = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:8001/dashboard/${email}`,{
+        fetch(`http://localhost:8000/dashboard/${email}`,{
           method: "DELETE",
           body: JSON.stringify(formValues),
           headers: {

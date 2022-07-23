@@ -19,7 +19,7 @@ export default function Register (){
         if (valorP1===valorP2){
           e.preventDefault();
           console.log(formValues);
-          fetch(`http://localhost:8001/login/new`, {
+          fetch(`http://localhost:8000/login/new`, {
             method: "POST",
             body: JSON.stringify(formValues),
             headers: {

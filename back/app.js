@@ -9,7 +9,7 @@ require('dotenv').config();
 
 // La cadena de conexión a la base de datos
 const conn = process.env.DATABASE_URL;
-const port = 8001;
+const port = 8000;
 
 // Conexión a la base de datos
 mongoose.connect(conn);
