@@ -23,7 +23,8 @@ header {
 }
 header.menuSticky {
     position: fixed;
-    padding-top: 0;
+    padding: 20px 0;
+    margin: 0;
     top: 0;
     left: 0;
     width: 100%;
@@ -40,6 +41,10 @@ header.menuSticky button {
 }
 a{
     color: var(--white);
+}
+a:hover{
+    transform: scale(1.2);
+    transition: transform 1s ease-in-out;
 }
 .header div{
     width: 30%;
@@ -58,6 +63,29 @@ ul{
 li{
     margin: 0 1em;
 }
+.menu li::after, .login li::after{
+    display:block;
+    content: '';
+    border-bottom: solid 3px white;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+.menu li:hover:after, .login li:hover:after { transform: scaleX(1); }
+.menu li.fromLeft:after, .login li.fromLeft:after{  transform-origin:  0% 50%; }
+.menu .liSticky:after, .login .liSticky:after{
+    display:block;
+    content: '';
+    border-bottom: solid 3px #a733bb;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+/* li:hover{
+    color: #ffffff; 
+    border-bottom: 2px solid rgba(255, 255, 255, 1.0);
+    transition: all 0.3s ease-out 0s;
+    
+} */
+
 .login{
     padding-left: 10%;
 }
@@ -72,6 +100,7 @@ li{
     margin: 6px auto;
     height: 1px;
     background-color: #000;
+    transition: all .4s ease-in-out;
 }
 
 .buttonCollapsed{
@@ -80,6 +109,24 @@ li{
     border-radius: 10px;
     height: 45px;
     width: 45px;
+    transition: all .4s ease-in-out;
+}
+.buttonCollapsed.active{
+    transition-delay: 0.8s;
+    transform: rotate(45deg);
+    /* transition: all .4s ease-in-out; */
+}
+.buttonCollapsed.active > div:nth-child(2){
+    width: 0;
+}
+.buttonCollapsed.active > div:nth-child(1), .buttonCollapsed.active > div:nth-child(3){
+    transition-delay: .4s;
+}
+.buttonCollapsed.active > div:nth-child(1){
+    transform: translateY(7.5px) translateX(0px);
+}
+.buttonCollapsed.active > div:nth-child(3){
+    transform: translateY(-6.5px) translateX(0px) rotate(90deg);
 }
 
 .navbarExpanded{
@@ -146,6 +193,9 @@ li{
     .buttonResponsive{
         display: flex;
     }
+    .login{
+        padding-left: 0%;
+    }
 }
 @media only screen and (max-width: 500px) {
     .logo img{
@@ -159,5 +209,8 @@ li{
     }
     .buttonResponsive{
         display: flex;
+    }
+    .login{
+        padding-left: 0%;
     }
 }

@@ -38,6 +38,9 @@ export default function Home (){
 
     return (
         <div>
+            {/* <video src="../../assets/Spiral.mp4">
+
+            </video> */}
             <div className={styleHome.section}>
                 <ul className={styleHome.ulBody}>
                     <li>

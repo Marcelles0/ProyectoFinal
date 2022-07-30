@@ -5,17 +5,21 @@ import styleHeader from "./Header.module.css";
 import imgLogo from "../../assets/image/logo.png";
 
 export default function Header() {
-
+    
     const openMenu=()=>{
         //document.querySelector(`.${styleHeader.buttonCollapsed}`)
         let buttonMenu = document.querySelector("button");
+        let navMenu = document.querySelector(`#navMenu`);
+        
         if(buttonMenu.getAttribute('aria-expanded')==="false"){
             buttonMenu.setAttribute('aria-expanded', "true");
             document.querySelector(`.${styleHeader.navbarExpanded}`).classList.add(`${styleHeader.show}`);
+            navMenu.classList.add(`${styleHeader.active}`);
         }
         else{
             buttonMenu.setAttribute('aria-expanded',"false");
             document.querySelector(`.${styleHeader.navbarExpanded}`).classList.remove(`${styleHeader.show}`);
+            navMenu.classList.remove(`${styleHeader.active}`);
         }
         //console.log(buttonMenu.getAttribute('aria-expanded'));
     }
@@ -23,11 +27,18 @@ export default function Header() {
        
     window.addEventListener("scroll", ()=>{
         let headerScroll = document.querySelector("header");
+        let liScroll = document.querySelectorAll("header li");
         let windowScroll = window.pageYOffset;
         if (windowScroll >= 80) {
             headerScroll.classList.add(`${styleHeader.menuSticky}`);
+            for (const li of liScroll) {
+                li.classList.add(`${styleHeader.liSticky}`);
+            }
         } else {
             headerScroll.classList.remove(`${styleHeader.menuSticky}`);
+            for (const li of liScroll) {
+                li.classList.remove(`${styleHeader.liSticky}`);
+            }
         }
     })
 
@@ -77,20 +88,20 @@ export default function Header() {
                     
             </div>
             <div className={styleHeader.buttonResponsive} >
-                <button className={styleHeader.buttonCollapsed} aria-expanded="false" onClick={openMenu}>
+                <button id="navMenu" className={styleHeader.buttonCollapsed} aria-expanded="false" onClick={openMenu}>
                     <div></div>
                     <div></div>
                     <div></div>
                 </button>
                 <div className={styleHeader.navbarExpanded}>
                     <ul>
-                        <li>
+                        <li className={styleHeader.fromLeft}>
                             <Link to={`/`}>Home</Link>
                         </li>
-                        <li>
+                        <li className={styleHeader.fromLeft}>
                             <Link to={`/contact`}>Contact</Link>
                         </li>
-                        <li>
+                        <li className={styleHeader.fromLeft}>
                             <Link to={`/app-translate`}>Translate</Link>
                         </li>
                     </ul>

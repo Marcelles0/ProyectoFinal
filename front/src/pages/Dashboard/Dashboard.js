@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import styleDashboard from "./Dashboard.module.css";
 
+// const Model = require('../../../../../back/Model/loginModel');
+
 
 export default function Dashboard (){
     const params = useParams("");
@@ -16,11 +18,18 @@ export default function Dashboard (){
         if(e.target.checked){
             setFormValues((prev) => ({...prev, [e.target.name]: e.target.value }));
         }
-    };
+    };/* 
+    Model.find({
+        'email': localStorage.email
+    }).exec().then((result)=>{
+        console.log(result._id);
+    }) */
     let email = localStorage.user;
+    console.log(email);
+    // let userId = localStorage.getItem("id").substring('(',')')
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:8000/dashboard/${email}`,{
+        fetch(`http://localhost:8000/dashboard/:${email}`,{
           method: "PUT",
           body: JSON.stringify(formValues),
           headers: {
@@ -42,7 +51,7 @@ export default function Dashboard (){
 
       const handleSubmit2 = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:8000/dashboard/${email}`,{
+        fetch(`http://localhost:8000/dashboard/:${email}`,{
           method: "DELETE",
           body: JSON.stringify(formValues),
           headers: {

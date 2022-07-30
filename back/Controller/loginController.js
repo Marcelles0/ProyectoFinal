@@ -7,9 +7,9 @@ const {generateToken, verifyRefreshToken} = require('../lib/utils');
 const { default: mongoose } = require('mongoose');
 
 
-const parseId = (id) =>{
+/* const parseId = (id) =>{
     return mongoose.Types.ObjectId(id)
-}
+} */
 
 // User register
 
@@ -43,6 +43,10 @@ router.post('/', (req, res)=>{
         console.log(result);
         if (result.length > 0){
             bcrypt.compare(req.body.password, result[0].password, (error, response)=>{
+                console.log(req.body.password, result[0]._id);
+                /* if (result[0]._id !== 0 || result[0]._id !== null) {
+                    localStorage.setItem("id", result[0]._id);
+                } */
                 if (error){
                     res.status(404).json({
                         status: "failed",
@@ -118,6 +122,7 @@ router.post('/refresh', verifyRefreshToken, (req, res) => {
 
 router.put('/dashboard/:email', async (req, res)=>{
     const { name, email, password} = req.body;
+    console.log("cambia datos");
     console.log(req.params.id);
 
 
@@ -166,7 +171,7 @@ router.put('/dashboard/:email', async (req, res)=>{
     } */
 });
 
-router.delete("/:email", (req, res) => {
+router.delete("/:id", (req, res) => {
     let id = req.params.id;
     Model.findByIdAndDelete(id)
         .then((result) => {
