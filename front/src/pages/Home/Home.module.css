@@ -9,15 +9,20 @@ img{
 }
 .section ul li{
     min-width: 40%;
+    z-index: 1;
+    margin-top: 5%;
 }
 body .section{
-    background: linear-gradient(#6141e2, #b6a9f0);
+    /* background: linear-gradient(#6141e2, #b6a9f0); */
+    background: rgb(165,52,187);
+background: linear-gradient(90deg, rgba(165,52,187,1) 0%, rgba(146,62,192,1) 35%, rgba(126,73,199,1) 100%);
 }
-/* video{
-    width: 100%;
-    width: 100%;
-    z-index: -1;
-} */
+ video{
+    position: absolute;
+    height: 125vh;
+    overflow: hidden;
+    margin-top: 5%;
+} 
 h2 {
     font-size: 36px;
     font-style: normal;
@@ -242,7 +247,9 @@ p {
 }
 
 @media only screen and (max-width: 1024px) {
-    
+    video{
+        margin-top: -10%;
+    }
 }
 @media only screen and (max-width: 768px) {
     h2{
@@ -262,6 +269,9 @@ p {
     img{
         width: 100%;
         height: auto;
+    }
+    video{
+        margin-top: -27%;
     }
 }
 @media only screen and (max-width: 500px) {
@@ -283,4 +293,33 @@ p {
         width: 100%;
         height: auto;
     }
+    video{
+        margin-top: -57%;
+    }
 }
+/* 
+@media only screen and (min-width: 576px) {
+  html,body {
+    font-size: normal;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html,body {
+    font-size: large;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html,body {
+    font-size: large;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html,body {
+    font-size: x-large;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  html,body {
+    font-size: x-large;
+  }
+} */

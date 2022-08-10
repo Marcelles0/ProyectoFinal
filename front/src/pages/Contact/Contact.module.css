@@ -21,7 +21,7 @@ section h1{
 li{
     text-align: left;
     font-weight: 600;
-    margin-bottom: .5rem;
+    /* margin-bottom: .5rem; */
     display: inline-block;
 }
 textarea, input{
@@ -118,7 +118,11 @@ h3.marginDiv{
 h2.marginDiv{
     margin: 1em 0;
 }
-
+iframe{
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+}
 @media only screen and (max-width: 1024px) {
     
 }
@@ -138,3 +142,29 @@ h2.marginDiv{
         max-width: none;
     }
 }
+/* 
+@media only screen and (min-width: 576px) {
+  html,body {
+    font-size: normal;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html,body {
+    font-size: large;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html,body {
+    font-size: large;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html,body {
+    font-size: x-large;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  html,body {
+    font-size: x-large;
+  }
+} */

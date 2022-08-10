@@ -3,29 +3,32 @@ import { Link } from "react-router-dom";
 import styleHeader from "./Header.module.css";
 
 import imgLogo from "../../assets/image/logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLanguage,faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
-    
-    const openMenu=()=>{
+    const openMenu = () => {
         //document.querySelector(`.${styleHeader.buttonCollapsed}`)
         let buttonMenu = document.querySelector("button");
         let navMenu = document.querySelector(`#navMenu`);
-        
-        if(buttonMenu.getAttribute('aria-expanded')==="false"){
-            buttonMenu.setAttribute('aria-expanded', "true");
-            document.querySelector(`.${styleHeader.navbarExpanded}`).classList.add(`${styleHeader.show}`);
+
+        if (buttonMenu.getAttribute("aria-expanded") === "false") {
+            buttonMenu.setAttribute("aria-expanded", "true");
+            document
+                .querySelector(`.${styleHeader.navbarExpanded}`)
+                .classList.add(`${styleHeader.show}`);
             navMenu.classList.add(`${styleHeader.active}`);
-        }
-        else{
-            buttonMenu.setAttribute('aria-expanded',"false");
-            document.querySelector(`.${styleHeader.navbarExpanded}`).classList.remove(`${styleHeader.show}`);
+        } else {
+            buttonMenu.setAttribute("aria-expanded", "false");
+            document
+                .querySelector(`.${styleHeader.navbarExpanded}`)
+                .classList.remove(`${styleHeader.show}`);
             navMenu.classList.remove(`${styleHeader.active}`);
         }
         //console.log(buttonMenu.getAttribute('aria-expanded'));
-    }
-    
-       
-    window.addEventListener("scroll", ()=>{
+    };
+
+    window.addEventListener("scroll", () => {
         let headerScroll = document.querySelector("header");
         let liScroll = document.querySelectorAll("header li");
         let windowScroll = window.pageYOffset;
@@ -40,16 +43,16 @@ export default function Header() {
                 li.classList.remove(`${styleHeader.liSticky}`);
             }
         }
-    })
-
+    });
 
     return (
         <header className={styleHeader.header}>
             <div className={styleHeader.logo}>
                 <Link to={`/`}>
-                    <img src={imgLogo} alt="Logo" />
+                    <h1>
+                        <FontAwesomeIcon icon={faLanguage} className={styleHeader.faLanguageDetails} /> JSTranslate
+                    </h1>
                 </Link>
-                
             </div>
             <div className={styleHeader.menu}>
                 <ul>
@@ -65,16 +68,27 @@ export default function Header() {
                 </ul>
             </div>
             <div className={styleHeader.login}>
-                
-                    {
-                    (localStorage.getItem("token")!==null)&&(localStorage.getItem("token")!==undefined)
-                    ? (<ul><li><Link to={`/dashboard`}>Dashboard</Link></li><li>
-                        <button type="button" onClick={()=>{
-                            localStorage.removeItem("token");
-                            localStorage.removeItem("user");
-                            window.location.href="/login";
-                        }} className={styleHeader.buttonLogin}>Logout</button></li></ul>)
-                    : (
+                {localStorage.getItem("token") !== null &&
+                localStorage.getItem("token") !== undefined ? (
+                    <ul>
+                        <li>
+                            <Link to={`/dashboard`}>Profile</Link>
+                        </li>
+                        <li>
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    localStorage.removeItem("token");
+                                    localStorage.removeItem("user");
+                                    window.location.href = "/login";
+                                }}
+                                className={styleHeader.buttonLogin}
+                            >
+                               <FontAwesomeIcon icon={faArrowRightFromBracket}/> Logout
+                            </button>
+                        </li>
+                    </ul>
+                ) : (
                     <ul>
                         <li>
                             <Link to={`/login`}>Login</Link>
@@ -83,12 +97,15 @@ export default function Header() {
                             <Link to={`/register`}>Register</Link>
                         </li>
                     </ul>
-                    )
-                    }
-                    
+                )}
             </div>
-            <div className={styleHeader.buttonResponsive} >
-                <button id="navMenu" className={styleHeader.buttonCollapsed} aria-expanded="false" onClick={openMenu}>
+            <div className={styleHeader.buttonResponsive}>
+                <button
+                    id="navMenu"
+                    className={styleHeader.buttonCollapsed}
+                    aria-expanded="false"
+                    onClick={openMenu}
+                >
                     <div></div>
                     <div></div>
                     <div></div>

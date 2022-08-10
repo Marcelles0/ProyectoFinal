@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Cairo:wght@800&display=swap");
 :root {
   --blue: #007bff;
   --pink: #e83e8c;
@@ -45,7 +45,8 @@ body {
   overflow-x: hidden;
   background-color: #a741e2;
   color: var(--white);
-  font-size: x-large;
+  /* font-size: x-large; */
+  font-size: normal;
 }
 
 body {
@@ -59,6 +60,10 @@ p {
 
 a {
   text-decoration: none;
+  color: var(--white);
+}
+h1{
+  font-family: 'Cairo', sans-serif;
 }
 
 h1,
@@ -91,7 +96,7 @@ ul {
   list-style: none;
 }
 
-@media only screen and (max-width: 1024px) {
+/* @media only screen and (max-width: 1024px) {
   html,body {
       font-size: large;
   }
@@ -104,5 +109,30 @@ ul {
 @media only screen and (max-width: 500px) {
   html,body {
     font-size: normal;
+  }
+} */
+@media only screen and (min-width: 576px) {
+  html,body {
+    font-size: normal;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html,body {
+    font-size: large;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html,body {
+    font-size: x-large;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html,body {
+    font-size: x-large;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  html,body {
+    font-size: x-large;
   }
 }

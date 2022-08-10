@@ -265,12 +265,12 @@ export default function AppTranslate (){
                 <h1>AppTranslate</h1>
             </section>
             <section className={styleAppTranslate.noColor}>
+                <div  className={styleAppTranslate.container}>Texto de ejemplo
+                    <p>declarar x igual a 3 , declarar y igual a 5 , si x es menor que y entonces mostrar " hola mundo " .</p>
+                </div>
                 <div className={styleAppTranslate.container}>
                     <div>
                         <div>
-                            <div>Texto de ejemplo
-                                <p>declarar x igual a 3 , declarar y igual a 5 , si x es menor que y entonces mostrar " hola mundo " .</p>
-                            </div>
                             <div>
                                 <div>Natrual Code</div>
                                 <textarea id="NatrualCode" type="text" placeholder="Natural Code Here" rows={10}></textarea>

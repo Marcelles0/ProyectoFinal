@@ -10,11 +10,11 @@ export default function Login (){
         email: "",
         password: "",
       });
-    
+    let user;
       //Funcion para insertar o modificar el registro al endpoint POST / PUT
       const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formValues);
+        // console.log(formValues);
         fetch(`http://localhost:8000/login/`, {
           method: "POST",
           body: JSON.stringify(formValues),
@@ -24,15 +24,17 @@ export default function Login (){
         })
           .then((res) => res.json())
           .then((data) => {
-            //console.log(data.data.token)
+            user = data.data.user;
+            // console.log(data.data.user)
             //Esta parte adaptarla para node con express
             if(data.code===401){
               alert('Error, datos incorrecto');
             }
             else{
                 localStorage.setItem("token", data.data.token);
-                localStorage.setItem("user", data.data.user);
-              window.location.href="/dashboard";
+                localStorage.setItem("userId", JSON.stringify(data.data.user[0]._id));
+                // console.log(data.data.user[0]._id);
+              // window.location.href="/dashboard";
               //navigate(`/dashboard`, { replace: true });
             }
             //FIN Esta parte adaptarla para node con express

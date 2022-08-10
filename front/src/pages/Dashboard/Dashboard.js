@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import styleDashboard from "./Dashboard.module.css";
+// import Login from "../Login/Login";
 
 // const Model = require('../../../../../back/Model/loginModel');
 
@@ -26,6 +27,7 @@ export default function Dashboard (){
     }) */
     let email = localStorage.user;
     console.log(email);
+    // console.log(Login.user);
     // let userId = localStorage.getItem("id").substring('(',')')
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -72,7 +74,7 @@ export default function Dashboard (){
                             <div>
                                 <div>
                                     <div>User Name</div>
-                                    <div></div>
+                                    <div>{/* {Login.user.userName} */}</div>
                                 </div>
                                 <div>
                                     <div>Email</div>

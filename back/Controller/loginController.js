@@ -42,6 +42,7 @@ router.post('/', (req, res)=>{
     }).exec().then((result)=>{
         console.log(result);
         if (result.length > 0){
+            console.log(result);
             bcrypt.compare(req.body.password, result[0].password, (error, response)=>{
                 console.log(req.body.password, result[0]._id);
                 /* if (result[0]._id !== 0 || result[0]._id !== null) {
@@ -57,7 +58,7 @@ router.post('/', (req, res)=>{
                     res.status(201).json({
                         status: "succeeded",
                         data: {
-                            user: req.body.email,
+                            user: result,
                             token: generateToken(result, false),
                             refreshToken: generateToken(result, true)
                         },
