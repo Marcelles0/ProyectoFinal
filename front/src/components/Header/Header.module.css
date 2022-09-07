@@ -48,12 +48,12 @@ header.menuSticky {
 header.menuSticky a {
     color: #000;
 }
+header.menuSticky .login li a {
+    color: #000;
+}
 header.menuSticky button {
     color: #000;
     background-color: #ffffff00
-}
-header a{
-    
 }
 header a:hover{
     transform: scale(1.2);
@@ -75,22 +75,27 @@ header ul{
 /* li{
     margin: 0 1em;
 } */
-.menu li::after, .login li::after{
+.menu li::after/* , .login li::after */{
     display:block;
     content: '';
     border-bottom: solid 3px white;  
     transform: scaleX(0);  
     transition: transform 250ms ease-in-out;
 }
-.menu li:hover:after, .login li:hover:after { transform: scaleX(1); }
-.menu li.fromLeft:after, .login li.fromLeft:after{  transform-origin:  0% 50%; }
-.menu .liSticky:after, .login .liSticky:after{
+.menu li:hover:after/* , .login li:hover:after */ { transform: scaleX(1); }
+.menu li.fromLeft:after/* , .login li.fromLeft:after */{  transform-origin:  0% 50%; }
+.menu .liSticky:after/* , .login .liSticky:after */{
     display:block;
     content: '';
     border-bottom: solid 3px #a733bb;  
     transform: scaleX(0);  
     transition: transform 250ms ease-in-out;
 }
+.login li a:hover{
+    background-color: white;
+    color: #7d4ac7;
+}
+
 /* li:hover{
     color: #ffffff; 
     border-bottom: 2px solid rgba(255, 255, 255, 1.0);
@@ -146,6 +151,7 @@ header ul{
     display: none;
     position: absolute;
     top: 75px;
+    left: 10vw;
     width: 80% !important;
     margin: 6px auto;
 }
@@ -249,61 +255,77 @@ header ul{
         display: flex;
         justify-content: center;
     }
+    .menu ul{
+        flex-direction: row;
+    }
+    .menu li{
+        padding: 0 1.5rem;
+    }
     .buttonResponsive{
         display: none;
     }
     .login{
         padding-left: 10%;
+    }
+    .login ul {
+        
+        display: flex;
+        flex-direction: column;
+    }
+    .login li:first-of-type {
+        
+       margin-bottom: 1.3em;
+    }
+    .login a, .login li button{
+        /* background: #ffffff; */
+        /* color: #7d4ac7; */
+        border: 2px solid #ffffff;
+        padding: 6px 20px;
+        border-radius: 6px;
+    }
+    .login li:first-of-type a {
+        /* background: transparent; */
+        /* color: white; */
+    }
+    .login li:last-of-type a, .login li:last-of-type button{
+        background-color: white;
+        color: #7d4ac7;
+    }
+    .login li:last-of-type a:hover, .login li:last-of-type button:hover{
+        background-color: #7c4ac700;
+        color: white;
+    }
+    .menuSticky .login li a, .menuSticky .login li button{
+        border: 2px solid #a733bb;
+    }
+    .menuSticky .login li a:hover, .menuSticky .login li button:hover{
+        border: 2px solid black;
+        background-color: #a733bb;
+        color: white;
+    }
+    .menuSticky .login li:last-of-type a, .menuSticky .login li:last-of-type button{
+        border: 2px solid black;
+        background-color: #a733bb;
+        color: white;
+    }
+    .menuSticky .login li:last-of-type a:hover, .menuSticky .login li:last-of-type button:hover{
+        border: 2px solid #a733bb;
+        background-color: white;
+        color: black;
     }
 }
 @media only screen and (min-width: 992px) {
-    .menu{
-        display: flex;
-        justify-content: center;
-    }
-    .buttonResponsive{
-        display: none;
-    }
-    .login{
-        padding-left: 10%;
-    }
     header {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .login ul {
-        
-        display: flex;
-        flex-direction: column;
-    }
     .login li:first-of-type {
         
        margin-bottom: 1.7em;
-    }
-    .login a {
-        background: #ffffff;
-        color: #7d4ac7;
-        border: 2px solid #ffffff;
-        padding: 6px 20px;
-        border-radius: 6px;
-    }
-    .login li:first-of-type a {
-        background: transparent;
-        color: white;
     }
 }
 @media only screen and (min-width: 1200px) {
-    .menu{
-        display: flex;
-        justify-content: center;
-    }
-    .buttonResponsive{
-        display: none;
-    }
-    .login{
-        padding-left: 10%;
-    }
     header {
         display: flex;
         justify-content: space-between;
@@ -319,31 +341,21 @@ header ul{
        margin-bottom: 1.7em;
     }
     .login a {
-        background: #ffffff;
-        color: #7d4ac7;
+        /* background: #ffffff; */
+        /* color: #7d4ac7; */
         border: 2px solid #ffffff;
         padding: 6px 20px;
         border-radius: 6px;
     }
     .login li:first-of-type a {
-        background: transparent;
-        color: white;
+       /*  background: transparent; */
+        /* color: white; */
     }
 }
 @media only screen and (min-width: 1400px) {
     .header{
         margin: .5% 0;
     }
-    .menu{
-        display: flex;
-        justify-content: center;
-    }
-    .buttonResponsive{
-        display: none;
-    }
-    .login{
-        padding-left: 10%;
-    }
     header {
         display: flex;
         justify-content: space-between;
@@ -359,14 +371,14 @@ header ul{
        margin-bottom: 1.7em;
     }
     .login a {
-        background: #ffffff;
-        color: #7d4ac7;
+        /* background: #ffffff; */
+        /* color: #7d4ac7; */
         border: 2px solid #ffffff;
         padding: 6px 20px;
         border-radius: 6px;
     }
     .login li:first-of-type a {
-        background: transparent;
-        color: white;
+        /* background: transparent; */
+        /* color: white; */
     }
 }

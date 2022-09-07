@@ -144,27 +144,17 @@ iframe{
 }
 /* 
 @media only screen and (min-width: 576px) {
-  html,body {
-    font-size: normal;
-  }
+    
 }
 @media only screen and (min-width: 768px) {
-  html,body {
-    font-size: large;
-  }
+    
 }
 @media only screen and (min-width: 992px) {
-  html,body {
-    font-size: large;
-  }
+    
 }
 @media only screen and (min-width: 1200px) {
-  html,body {
-    font-size: x-large;
-  }
+    
 }
 @media only screen and (min-width: 1400px) {
-  html,body {
-    font-size: x-large;
-  }
+    
 } */

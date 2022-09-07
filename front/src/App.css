@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Cairo:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&family=Cairo:wght@800&display=swap");
 :root {
   --blue: #007bff;
   --pink: #e83e8c;
@@ -45,8 +45,11 @@ body {
   overflow-x: hidden;
   background-color: #a741e2;
   color: var(--white);
-  /* font-size: x-large; */
-  font-size: normal;
+  /* font-size: x-large;
+  font-size: normal; */
+}
+footer{
+  background-color: #a741e2;
 }
 
 body {

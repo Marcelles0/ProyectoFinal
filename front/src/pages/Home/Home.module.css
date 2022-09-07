@@ -1,10 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: white !important;
+}
 .section {
     width: 100%;
     padding: 10em 5%;
     color: white;
 }
-img{
-    width: 110%;
+.section img{
+    width: 100%;
     height: auto;
 }
 .section ul li{
@@ -12,18 +18,23 @@ img{
     z-index: 1;
     margin-top: 5%;
 }
+.ulBody {
+    text-align: center;
+    display: inline;
+    flex-direction: column;
+}
 body .section{
     /* background: linear-gradient(#6141e2, #b6a9f0); */
     background: rgb(165,52,187);
-background: linear-gradient(90deg, rgba(165,52,187,1) 0%, rgba(146,62,192,1) 35%, rgba(126,73,199,1) 100%);
+    background: linear-gradient(90deg, rgba(165,52,187,1) 0%, rgba(146,62,192,1) 35%, rgba(126,73,199,1) 100%);
 }
- video{
+.section video{
     position: absolute;
     height: 125vh;
     overflow: hidden;
     margin-top: 5%;
 } 
-h2 {
+.section h2, .circleDiv h2, .scrollContainer h2 {
     font-size: 36px;
     font-style: normal;
     line-height: 50px;
@@ -246,6 +257,50 @@ p {
     transition: all 1s ease 0s;
 }
 
+.scrollContainer{
+    display: flex;
+    overflow-x: scroll;
+    padding: 1rem;
+    width: 70%;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 1rem;
+    border-radius: 8px;
+    gap: 12px;
+    text-align: center;
+    margin: auto;
+}
+.scrollContainer .scrollItem{
+    flex: 0 0 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    scroll-snap-align: start;
+    color: white;
+}
+.scrollContainer .scrollYellow{
+    background-color: #FEE140;
+    background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
+
+}
+.scrollContainer .scrollOrange{
+    background-color: #FFE53B;
+    background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+
+}
+.scrollContainer .scrollBlue{
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+}
+.scrollContainer .scrollPurple{
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+.scrollContainer .scrollGreen{
+    background-color: #08AEEA;
+    background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+
+}
+/* 
 @media only screen and (max-width: 1024px) {
     video{
         margin-top: -10%;
@@ -297,29 +352,53 @@ p {
         margin-top: -57%;
     }
 }
-/* 
+ */
+
 @media only screen and (min-width: 576px) {
-  html,body {
-    font-size: normal;
-  }
+    .scrollContainer{
+        width:55%;
+    }
+    .scrollContainer .scrollItem{
+        flex: 0 0 95%;
+    }
 }
 @media only screen and (min-width: 768px) {
-  html,body {
-    font-size: large;
-  }
+    .scrollContainer{
+        width:50%;
+    }
+    .scrollContainer .scrollItem{
+        flex: 0 0 85%;
+    }
+    .section h2 {
+        font-size: 50px;
+        font-style: normal;
+        line-height: 70px;
+    }
+    .section p {
+        font-size: 20px;
+    }
 }
 @media only screen and (min-width: 992px) {
-  html,body {
-    font-size: large;
-  }
+    .scrollContainer{
+        width:60%;
+    }
+    .scrollContainer .scrollItem{
+        flex: 0 0 65%;
+    }
+    .section img{
+        width: 50%;
+    }
 }
 @media only screen and (min-width: 1200px) {
-  html,body {
-    font-size: x-large;
-  }
+    .scrollContainer{
+        width:70%;
+    }
+    .scrollContainer .scrollItem{
+        flex: 0 0 55%;
+    }
 }
 @media only screen and (min-width: 1400px) {
-  html,body {
-    font-size: x-large;
-  }
-} */
+    .scrollContainer .scrollItem{
+        flex: 0 0 35%;
+    }
+}

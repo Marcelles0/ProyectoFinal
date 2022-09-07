@@ -5,9 +5,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import imgBackground from "../../assets/image/background.png";
 import imgBackgroundWhite from "../../assets/image/backgroundWhite.png";
+import imgBanner from "../../assets/image/banner-img.png";
 import videoBackground from "../../assets/Spiral.mp4";
 
 export default function Home() {
+
+    
+
+    
     const changeActive = (itemValue) => {
         //document.querySelector(`.${styleHeader.buttonCollapsed}`)
         /* console.log(itemValue);
@@ -110,20 +115,25 @@ export default function Home() {
         <div>
             {/* <video src={videoBackground} muted loop>
             </video> */}
-            <video width="100%" height="100%" preload="auto" muted loop /* autoPlay */>
+            {/* <video width="100%" height="100%" preload="auto" muted loop autoPlay>
                 <source src={videoBackground} type="video/mp4" />
                 Your browser does not support HTML5 video.
-            </video>
+            </video> */}
             <div className={styleHome.section}>
                 <ul className={styleHome.ulBody}>
-                    <li>
-                        <h2>Lorem Ipsum</h2>
+                    
+                    <h2>Lorem Ipsum</h2>
+                    <p>
                         Traduce del lenguaje natural a JavaScript de un solo
                         click
-                    </li>
-                    <li>
-                        <img src={imgBackgroundWhite} alt="imgBackgroundWhite" />
-                    </li>
+                    </p>
+                    
+                    
+                    <img src={imgBackgroundWhite} alt="imgBackgroundWhite" />
+                    
+                    
+                    <img src={imgBanner} alt="imgBanner" />
+                    
                 </ul>
             </div>
             <div className={styleHome.circleDiv}>
@@ -252,6 +262,33 @@ export default function Home() {
                             </p>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className={styleHome.scrollContainer}>
+                <div className={`${styleHome.scrollItem} ${styleHome.scrollBlue}`}>
+                    <h2>Lorem Ipsum</h2>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti officiis ea ex culpa reiciendis sed hic nemo dignissimos? Earum iste adipisci amet, ea veniam odit autem qui mollitia voluptate delectus.
+                    
+                </div>
+                <div className={`${styleHome.scrollItem} ${styleHome.scrollGreen}`}>
+                    <h2>Lorem Ipsum</h2>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti officiis ea ex culpa reiciendis sed hic nemo dignissimos? Earum iste adipisci amet, ea veniam odit autem qui mollitia voluptate delectus.
+                    
+                </div>
+                <div className={`${styleHome.scrollItem} ${styleHome.scrollPurple}`}>
+                    <h2>Lorem Ipsum</h2>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti officiis ea ex culpa reiciendis sed hic nemo dignissimos? Earum iste adipisci amet, ea veniam odit autem qui mollitia voluptate delectus.
+                    
+                </div>
+                <div className={`${styleHome.scrollItem} ${styleHome.scrollOrange}`}>
+                    <h2>Lorem Ipsum</h2>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti officiis ea ex culpa reiciendis sed hic nemo dignissimos? Earum iste adipisci amet, ea veniam odit autem qui mollitia voluptate delectus.
+                    
+                </div>
+                <div className={`${styleHome.scrollItem} ${styleHome.scrollYellow}`}>
+                    <h2>Lorem Ipsum</h2>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti officiis ea ex culpa reiciendis sed hic nemo dignissimos? Earum iste adipisci amet, ea veniam odit autem qui mollitia voluptate delectus.
+                    
                 </div>
             </div>
         </div>
