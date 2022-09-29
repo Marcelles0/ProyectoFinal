@@ -21,7 +21,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         
         <Route path="/app-translate" element={<AuthProvider><AppTranslate /></AuthProvider>} />
-        <Route path="/dashboard" element={<AuthProvider><Dashboard /></AuthProvider>} />
+        <Route path="/dashboard/:id" element={<AuthProvider><Dashboard /></AuthProvider>} />
       </Route>
     </Routes>
   );

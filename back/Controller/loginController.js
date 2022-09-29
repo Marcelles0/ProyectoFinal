@@ -3,7 +3,7 @@ const Model = require('../Model/loginModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
-const {generateToken, verifyRefreshToken} = require('../lib/utils');
+const {generateToken, verifyToken, verifyRefreshToken} = require('../lib/utils');
 const { default: mongoose } = require('mongoose');
 
 
@@ -36,6 +36,22 @@ router.post('/new', async (req, res)=>{
     });
 });
 
+/* router.get('/', verifyToken, (req, res)=>{
+    Model.find().then((data)=>{
+        res.status(200).json({
+            status: 'succeeded',
+            data,
+            error: null
+        })
+    }).catch((error)=>{
+        res.status(404).json({
+            status: 'failed',
+            data,
+            error: error.message
+        })
+    })
+})
+ */
 router.post('/', (req, res)=>{
     Model.find({
         'email': req.body.email
@@ -55,7 +71,7 @@ router.post('/', (req, res)=>{
                         error: error.message,
                     });
                 }else if (response){
-                    res.status(201).json({
+                    res.status(200).json({
                         status: "succeeded",
                         data: {
                             user: result,
@@ -87,6 +103,23 @@ router.post('/', (req, res)=>{
       });
     });
 });
+// GET user by id
+// router.get('/:id', verifyToken, (req, res)=>{
+router.get('/:id', (req, res)=>{
+    Model.findById(req.params.id).exec().then((data)=>{
+        res.status(200).json({
+            status: 'succeeded',
+            data,
+            error: null
+        })
+    }).catch((error)=>{
+        res.status(404).json({
+            status: 'failed',
+            data,
+            error: error.message
+        })
+    })
+})
 
 router.post('/refresh', verifyRefreshToken, (req, res) => {
     try{

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styleHeader from "./Header.module.css";
 
-import imgLogo from "../../assets/image/logo.png";
+// import imgLogo from "../../assets/image/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLanguage,faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
@@ -72,7 +72,7 @@ export default function Header() {
                 localStorage.getItem("token") !== undefined ? (
                     <ul>
                         <li>
-                            <Link to={`/dashboard`}>Profile</Link>
+                            <Link to={`/dashboard/:id`}>Profile</Link>
                         </li>
                         <li>
                             <button

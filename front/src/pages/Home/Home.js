@@ -122,7 +122,7 @@ export default function Home() {
             <div className={styleHome.section}>
                 <ul className={styleHome.ulBody}>
                     
-                    <h2>Lorem Ipsum</h2>
+                    <h2>JavaScript Translate</h2>
                     <p>
                         Traduce del lenguaje natural a JavaScript de un solo
                         click
