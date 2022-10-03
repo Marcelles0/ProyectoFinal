@@ -2,15 +2,30 @@ import React from "react";
 import styleHome from "./Home.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF,
+    faTwitter,
+    faInstagram,
+    faGit,faFacebook } from "@fortawesome/free-brands-svg-icons";
 import imgBackground from "../../assets/image/background.png";
 import imgBackgroundWhite from "../../assets/image/backgroundWhite.png";
 import imgBanner from "../../assets/image/banner.webp";
+import imgUser from "../../assets/image/user.png"
 import videoBackground from "../../assets/Spiral.mp4";
+
+
 
 export default function Home() {
 
-    
+    const openRS = () => {
+        let listContainer = document.querySelector(`.${styleHome.openRS}`);
+        console.log("click");
+
+        if (listContainer.hasAttribute(`.${styleHome.opened}`)) {
+            listContainer.classList.remove(`.${styleHome.opened}`);
+        } else {
+            listContainer.classList.add(`.${styleHome.opened}`);
+        }
+    }
 
     
     const changeActive = (itemValue) => {
@@ -285,6 +300,170 @@ export default function Home() {
                     <h2>Lorem Ipsum</h2>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti officiis ea ex culpa reiciendis sed hic nemo dignissimos? Earum iste adipisci amet, ea veniam odit autem qui mollitia voluptate delectus.
                     
+                </div>
+            </div>
+            <div className={styleHome.leadershipContainer}>
+                <div>
+                    <div>
+                        <h3>Leadership team</h3>
+                    </div>
+                    <div>
+                        <p>We work with the Owners and Directors of hundreds of training providers, helping them grow and where appropriate sell their training businesses.</p>
+                    </div>
+                    <div className={styleHome.leadershipTeam}>
+                        <div>
+                            <div className={styleHome.team}><img src={imgUser}></img></div>
+                            <div className={styleHome.buttonRS}>
+                                <span className={styleHome.openIconList}></span>
+                                <div className={styleHome.openList}>
+                                    <a
+                                        href="https://www.facebook.com/"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faFacebookF} />
+                                    </a>
+                                    <a
+                                        href="https://twitter.com/"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faTwitter} />
+                                    </a>
+                                    <a
+                                        href="https://www.instagram.com/"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faInstagram} />
+                                    </a>
+                                    <a
+                                        href="https://github.com/Marcelles0"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faGit} />
+                                    </a>
+                                </div>
+                            </div>
+                            <h4>Lorem Ipsum</h4>
+                            <p>Founder</p>
+                        </div>
+                        <div>
+                            <div className={styleHome.team}><img src={imgUser}></img></div>
+                            <div className={styleHome.buttonRS}>
+                                <span className={styleHome.openIconList}></span>
+                                <div className={styleHome.openList}>
+                                    <a
+                                        href="https://www.facebook.com/"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faFacebookF} />
+                                    </a>
+                                    <a
+                                        href="https://twitter.com/"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faTwitter} />
+                                    </a>
+                                    <a
+                                        href="https://www.instagram.com/"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faInstagram} />
+                                    </a>
+                                    <a
+                                        href="https://github.com/Marcelles0"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faGit} />
+                                    </a>
+                                </div>
+                            </div>
+                            <h4>Lorem Ipsum</h4>
+                            <p>Founder</p>
+                        </div>
+                        <div>
+                            <div className={styleHome.team}><img src={imgUser}></img></div>
+                            <div className={styleHome.buttonRS}>
+                                <span className={styleHome.openIconList}></span>
+                                <div className={styleHome.openList}>
+                                    <a
+                                        href="https://www.facebook.com/"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faFacebookF} />
+                                    </a>
+                                    <a
+                                        href="https://twitter.com/"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faTwitter} />
+                                    </a>
+                                    <a
+                                        href="https://www.instagram.com/"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faInstagram} />
+                                    </a>
+                                    <a
+                                        href="https://github.com/Marcelles0"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faGit} />
+                                    </a>
+                                </div>
+                            </div>
+                            <h4>Lorem Ipsum</h4>
+                            <p>Founder</p>
+                        </div>
+                        <div>
+                            <div className={styleHome.team}><img src={imgUser}></img></div>
+                            <div className={styleHome.buttonRS}>
+                                {/* <button  onClick={openRS}> */}<span className={styleHome.openIconList}></span>{/* </button> */}
+                                <div className={styleHome.openList}>
+                                    <a
+                                        href="https://www.facebook.com/"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faFacebookF} />
+                                    </a>
+                                    <a
+                                        href="https://twitter.com/"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faTwitter} />
+                                    </a>
+                                    <a
+                                        href="https://www.instagram.com/"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faInstagram} />
+                                    </a>
+                                    <a
+                                        href="https://github.com/Marcelles0"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <FontAwesomeIcon icon={faGit} />
+                                    </a>
+                                </div>
+                            </div>
+                            <h4>Lorem Ipsum</h4>
+                            <p>Founder</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

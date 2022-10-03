@@ -21,13 +21,13 @@ body{
 }
 .section .ulBody{
     position: absolute;
-    top: 10%;
+    top: 15em;
     text-align: left;
 }
 .section .lettersImg{
     position: absolute;
     left: 0;
-    top: 15%;
+    top: 23em;
 }
 .section p {
     max-width: 50%;
@@ -69,8 +69,8 @@ body .section{
     border-radius: 8px;
     gap: 12px;
     text-align: center;
-    margin: auto;
-    margin-bottom: 1em;
+    margin: 4em auto;
+    /* margin-bottom: 1em; */
 }
 .scrollContainer .scrollItem{
     flex: 0 0 100%;
@@ -103,6 +103,105 @@ body .section{
     background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
 
 }
+
+.leadershipContainer {
+    padding: 2em;
+    text-align: center;
+    color: black;
+    background: aliceblue;
+}
+.leadershipContainer h3{
+    padding: 1.5em 0;
+    font-size: 3rem;
+    font-weight: 600;
+}
+.leadershipContainer p{
+    font-size: 1rem;
+    line-height: 2em;
+}
+.leadershipContainer img{
+    width: 100%;
+}
+.leadershipTeam{
+    text-align: center;
+    display: inline-flex;
+    gap: 10%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.leadershipTeam div{
+    max-width: 300px;
+}
+.leadershipTeam div .team{
+    margin: 3em;
+    border: 5px solid white;
+    border-radius: 100%;
+}
+.leadershipTeam .buttonRS{
+    margin-top: -22px;
+    transition: .35s;
+    position: relative;
+}
+.leadershipTeam .buttonRS::before{
+    content: "";
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    transform: translate(-50%, -100%);
+    left: 50%;
+    top: 50%;
+    border-radius: 100px;
+    transition: .5s;
+    background-size: 200%;
+    background-image: linear-gradient(to right,#cc2b5e 0%,#753a88 51%,#cc2b5e 100%);
+}
+.leadershipTeam .opened::before{
+    width: 244px;
+}
+.leadershipTeam .openIconList{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    cursor: pointer;
+    z-index: 9999;
+    pointer-events: none;
+}
+.leadershipTeam .openIconList::before{
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+.leadershipTeam .openIconList::after{
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+.leadershipTeam .openIconList::after, .leadershipTeam .openIconList::before{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 15px;
+    height: 2px;
+    background: #fff;
+    content: '';
+    transition: all .4s ease-in-out;
+} 
+.openList{
+    display: none;
+    transition: .35s;
+}
+.openList a{
+    margin: 0 10px;
+}
+.opened{
+    display: block;
+}
+.buttonRS button{
+    width: 50px;
+    height: 50px;
+    z-index: 100000;
+}
+
 /* 
 @media only screen and (max-width: 1024px) {
     video{
@@ -170,6 +269,9 @@ body .section{
     .section{
         height: 50em;
     }
+    .section .lettersImg{
+        top: 22em;
+    }
 }
 @media only screen and (min-width: 768px) {
     .scrollContainer{
@@ -186,6 +288,10 @@ body .section{
     .section p {
         font-size: 20px;
     }
+    .section ul{
+        top: 17em;
+    }
+    
 }
 @media only screen and (min-width: 992px) {
     .scrollContainer{
@@ -204,6 +310,15 @@ body .section{
     .section{
         height: 45em;
     }
+    .section ul{
+        top: 19em;
+    }
+    .leadershipTeam div .team{
+        margin: 2em;
+    }
+    .leadershipTeam div{
+        max-width: 15em;
+    }
 }
 @media only screen and (min-width: 1200px) {
     .scrollContainer{
@@ -217,10 +332,16 @@ body .section{
         height: 50em;
     }
     .section .lettersImg{
-        top: 12%;
+        top: 20em;
     }
     .section{
         height: 50em;
+    }
+    .leadershipTeam div{
+        max-width: 10em;
+    }
+    .leadershipTeam{
+        gap: 0%;
     }
 }
 @media only screen and (min-width: 1400px) {

@@ -40,25 +40,25 @@ export default function Dashboard() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formValues);
-        // fetch(`http://localhost:8000/dashboard/:${email}`, {
-        //     method: "PUT",
-        //     body: JSON.stringify(formValues),
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //     },
-        // })
-        //     .then((res) => res.json())
-        //     .then((data) => {
-        //         // if(data.resultado==="ok"){
-        //         //     navigate(`/${props.lang}/enviado`, { replace: true });
-        //         // }
-        //         // else{
-        //         //     navigate(`/${props.lang}/no-enviado`, { replace: true });
-        //         // }
-        //     })
-        //     .catch((error) => {
-        //         // navigate(`/${props.lang}/no-enviado`, { replace: true });
-        //     });
+        fetch(`http://localhost:8000/dashboard/:${params.id}`, {
+            method: "PUT",
+            body: JSON.stringify(formValues),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                // if(data.resultado==="ok"){
+                //     navigate(`/${props.lang}/enviado`, { replace: true });
+                // }
+                // else{
+                //     navigate(`/${props.lang}/no-enviado`, { replace: true });
+                // }
+            })
+            .catch((error) => {
+                // navigate(`/${props.lang}/no-enviado`, { replace: true });
+            });
     };
 
     /* const handleSubmit2 = (e) => {
