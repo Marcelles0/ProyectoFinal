@@ -27,8 +27,9 @@ export default function Login (){
             // user = data.data.user;
             // console.log(data.data.user)
             //Esta parte adaptarla para node con express
-            if(data.code===401){
-              alert('Error, datos incorrecto');
+            console.log(data);
+            if(data.code===403){
+              alert(data.error);
             }
             else{
                 localStorage.setItem("token", data.data.token);

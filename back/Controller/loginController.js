@@ -85,6 +85,7 @@ router.post('/', (req, res)=>{
                         status: "failed",
                         error,
                         error: 'Wrong username or password',
+                        code: 403,
                     });
                 }
             })
@@ -93,6 +94,7 @@ router.post('/', (req, res)=>{
                 status: "failed",
                 error,
                 error: 'Wrong username or password',
+                code: 403,
             });
         }
     }).catch((error) => {

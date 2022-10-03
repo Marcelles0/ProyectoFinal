@@ -39,6 +39,14 @@ section h1{
     background-color: var(--white);
     color: black;
 }
+.loading{
+    position: fixed;
+    /* width: auto; */
+    padding: 0%;
+    height: 100%;
+    text-align: center;
+    top: 0%;
+}
 .container{
     width: 100%;
     padding-right: 30px;

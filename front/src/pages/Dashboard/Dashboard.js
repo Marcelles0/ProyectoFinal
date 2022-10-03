@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import styleDashboard from "./Dashboard.module.css";
 // import Login from "../Login/Login";
+import loadingGif from "../../assets/loading2.gif"
 
 // const Model = require('../../../../../back/Model/loginModel');
 
@@ -106,8 +107,9 @@ export default function Dashboard() {
                 <section>
                     <h1>Dashboard</h1>
                 </section>
-                <section className={styleDashboard.noColor}>
-                    <h3>Cargando...</h3>
+                <section className={styleDashboard.loading}>
+                    {/* <h3>Cargando...</h3> */}
+                    <img src={loadingGif} width="100%" height="100%"></img>
                 </section>
             </div>
         );

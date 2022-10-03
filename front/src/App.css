@@ -48,6 +48,15 @@ body {
   /* font-size: x-large;
   font-size: normal; */
 }
+::-webkit-scrollbar {
+  display: none;
+  background: #a733bb;
+  border-radius: 1em;
+}
+::-webkit-scrollbar-thumb{
+  background: #ecd4fa;
+  border-radius: 1em;
+}
 footer{
   background-color: #a741e2;
 }
@@ -117,6 +126,9 @@ ul {
 @media only screen and (min-width: 576px) {
   html,body {
     font-size: normal;
+  }
+  ::-webkit-scrollbar {
+    display: block;
   }
 }
 @media only screen and (min-width: 768px) {

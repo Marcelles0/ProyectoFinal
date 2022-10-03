@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import imgBackground from "../../assets/image/background.png";
 import imgBackgroundWhite from "../../assets/image/backgroundWhite.png";
-import imgBanner from "../../assets/image/banner-img.png";
+import imgBanner from "../../assets/image/banner.webp";
 import videoBackground from "../../assets/Spiral.mp4";
 
 export default function Home() {
@@ -120,6 +120,7 @@ export default function Home() {
                 Your browser does not support HTML5 video.
             </video> */}
             <div className={styleHome.section}>
+                <img class={styleHome.banner}src={imgBanner} alt="imgBanner" />
                 <ul className={styleHome.ulBody}>
                     
                     <h2>JavaScript Translate</h2>
@@ -128,15 +129,10 @@ export default function Home() {
                         click
                     </p>
                     
-                    
-                    <img src={imgBackgroundWhite} alt="imgBackgroundWhite" />
-                    
-                    
-                    <img src={imgBanner} alt="imgBanner" />
-                    
                 </ul>
+                <img class={styleHome.lettersImg} src={imgBackgroundWhite} alt="imgBackgroundWhite" />
             </div>
-            <div className={styleHome.circleDiv}>
+            {/* <div className={styleHome.circleDiv}>
                 <div className={styleHome.holderCircle}>
                     <div className={styleHome.round}></div>
                     <div className={styleHome.dotCircle}>
@@ -263,7 +259,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div className={styleHome.scrollContainer}>
                 <div className={`${styleHome.scrollItem} ${styleHome.scrollBlue}`}>
                     <h2>Lorem Ipsum</h2>
