@@ -36,6 +36,7 @@ export default function Login (){
                 localStorage.setItem("userId", JSON.stringify(data.data.user[0]._id));
                 // console.log(data.data.user[0]._id);
               // window.location.href="/dashboard";
+              console.log(data);
               navigate(`/dashboard/${data.data.user[0]._id}`, { replace: true });
             }
             //FIN Esta parte adaptarla para node con express

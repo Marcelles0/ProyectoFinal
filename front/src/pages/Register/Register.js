@@ -14,10 +14,10 @@ export default function Register (){
     
       //Funcion para insertar o modificar el registro al endpoint POST / PUT
       const handleSubmit = (e) => {
+        e.preventDefault();
         var valorP1 = document.getElementById("Password").value;
         var valorP2 = document.getElementById("Password2").value;
         if (valorP1===valorP2){
-          e.preventDefault();
           console.log(formValues);
           fetch(`http://localhost:8000/login/new`, {
             method: "POST",
@@ -35,7 +35,7 @@ export default function Register (){
               }
               else{
   
-                window.location.href="/dashboard";
+                window.location.href="/login";
                 //navigate(`/dashboard`, { replace: true });
               }
               //FIN Esta parte adaptarla para node con express

@@ -348,4 +348,8 @@ body .section{
     .scrollContainer .scrollItem{
         flex: 0 0 35%;
     }
+
+    .section .lettersImg{
+        top: 15em;
+    }
 }

@@ -140,7 +140,7 @@ export default function Home() {
                     
                     <h2>JavaScript Translate</h2>
                     <p>
-                        Traduce del lenguaje natural a JavaScript de un solo
+                        Traduce del lenguaje natural a JavaScript en un solo
                         click
                     </p>
                     

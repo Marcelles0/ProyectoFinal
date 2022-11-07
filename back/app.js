@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const members = require('./Controller/memberController');
 const login = require('./Controller/loginController');
+const notes = require('./Controller/notesController');
 
 // Acceso a la variable de entorno
 require('dotenv').config();
@@ -28,6 +29,9 @@ app.use(express.json());
 app.use(cors());
 app.use('/members', members);
 app.use('/login', login);
+app.use('/notes', notes);
+/* app.use('/newNotes', notes); */
+
 
 app.listen(port, ()=>{
     console.log(`Server running at http://localhost:${port}`);

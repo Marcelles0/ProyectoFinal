@@ -41,7 +41,7 @@ export default function Dashboard() {
         e.preventDefault();
         console.log(formValues);
         fetch(`http://localhost:8000/dashboard/:${params.id}`, {
-            method: "PUT",
+            method: "PATCH",
             body: JSON.stringify(formValues),
             headers: {
                 "Content-Type": "application/json",
@@ -55,6 +55,18 @@ export default function Dashboard() {
                 // else{
                 //     navigate(`/${props.lang}/no-enviado`, { replace: true });
                 // }
+                if (data.error) {
+                    alert("Error, datos incorrecto");
+                } else {
+                    setFormValues({
+                        userName: data.data.userName,
+                        email: data.data.email,
+                        password: data.data.password,
+                    });
+                    setTimeout(() => {
+                        setIsLoading(false);
+                    }, 2000);
+                }
             })
             .catch((error) => {
                 // navigate(`/${props.lang}/no-enviado`, { replace: true });
