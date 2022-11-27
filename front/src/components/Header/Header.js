@@ -45,6 +45,8 @@ export default function Header() {
         }
     });
 
+    // let id = localStorage.getItem("userId").replace(/\"/g, "");
+
     return (
         <header className={styleHeader.header}>
             <div className={styleHeader.logo}>
@@ -65,6 +67,9 @@ export default function Header() {
                     <li>
                         <Link to={`/app-translate`}>Translate</Link>
                     </li>
+                    <li>
+                        <Link to={`/notes`}>Notes</Link>
+                    </li>
                 </ul>
             </div>
             <div className={styleHeader.login}>
@@ -72,7 +77,7 @@ export default function Header() {
                 localStorage.getItem("token") !== undefined ? (
                     <ul>
                         <li>
-                            <Link to={`/dashboard/:id`}>Profile</Link>
+                            <Link to={`/dashboard/:${localStorage.getItem("userId").replace(/\"/g, "")}`}>Profile</Link>
                         </li>
                         <li>
                             <button
@@ -80,6 +85,7 @@ export default function Header() {
                                 onClick={() => {
                                     localStorage.removeItem("token");
                                     localStorage.removeItem("user");
+                                    localStorage.removeItem("userId");
                                     window.location.href = "/login";
                                 }}
                                 className={styleHeader.buttonLogin}
@@ -120,6 +126,9 @@ export default function Header() {
                         </li>
                         <li className={styleHeader.fromLeft}>
                             <Link to={`/app-translate`}>Translate</Link>
+                        </li>
+                        <li className={styleHeader.fromLeft}>
+                            <Link to={`/notes`}>Notes</Link>
                         </li>
                     </ul>
                 </div>

@@ -23,9 +23,10 @@ font-size: 1.2rem;
     /* text-align: center; */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     margin: 2.5% 0;
     z-index: 999;
+    gap: 10%;
 }
 header {
     transition: all 0.3s ease-out 0s;
@@ -67,7 +68,12 @@ header a:hover{
     display: none;
 }
 
-header ul{
+.menu ul{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+.login ul{
     flex-direction: column;
     display: flex;
     align-items: center;
@@ -259,14 +265,14 @@ header ul{
         flex-direction: row;
     }
     .menu li{
-        padding: 0 1.5rem;
+        padding: 0 .75rem;
     }
     .buttonResponsive{
         display: none;
     }
-    .login{
+    /* .login{
         padding-left: 10%;
-    }
+    } */
     .login ul {
         
         display: flex;
@@ -350,6 +356,9 @@ header ul{
     .login li:first-of-type a {
        /*  background: transparent; */
         /* color: white; */
+    }
+    .menu li{
+        padding: 0 1.5rem;
     }
 }
 @media only screen and (min-width: 1400px) {

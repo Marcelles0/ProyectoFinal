@@ -35,7 +35,7 @@ export default function Login (){
                 localStorage.setItem("token", data.data.token);
                 localStorage.setItem("userId", JSON.stringify(data.data.user[0]._id));
                 // console.log(data.data.user[0]._id);
-              // window.location.href="/dashboard";
+              // window.location.href=`/dashboard/:${data.data.user[0]._id}`;
               console.log(data);
               navigate(`/dashboard/${data.data.user[0]._id}`, { replace: true });
             }

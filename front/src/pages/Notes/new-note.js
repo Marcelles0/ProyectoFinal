@@ -1,13 +1,21 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styleNotes from "./Notes.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function NewNotes (){
+    console.log("hola");
+    // const userId = localStorage.getItem("userId").replace(/\"/g, "");
+    const userId = localStorage.getItem("userId").slice(1, -1);
     const [note, setNote]= useState({
         title:'',
         description:''
+        // userId: id
     })
 
+    // let userId = localStorage.getItem("userId");
     const handleChange = (e)=>{
         let newNote = {
             [e.target.name] : e.target.value,
@@ -23,28 +31,46 @@ export default function NewNotes (){
             mode:'cors',
             body: JSON.stringify(note),
             headers:{
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                authorization: userId
             }
         })
     }
     const onSubmit = (e)=>{
         e.preventDefault();
         saveNote();
+        window.location.href=`/notes`;
     }
 
     return (
-            <div>
-                <form onSubmit={onSubmit}/* action="/notes/new-note" method="POST" */>
-                    <div className={styleNotes.container}>
-                        <div>
-                            <input type="text" name="title" onChange={handleChange} placeholder="Title" autoFocus></input>
-                        </div>
-                        <div>
-                            <input type="text" name="description" onChange={handleChange} placeholder="Description" className={styleNotes.input}></input>
-                        </div>
-                        <button id="submit"  className={styleNotes.buttonAppTranslate} >Create</button>
+        <div>
+            <div className={styleNotes.section}>
+                <section>
+                    <h1>Notes</h1>
+                </section>
+            
+                <section className={styleNotes.sectionForms}>
+                    <div>
+                        <Link to={`/notes`}>
+                            Mis notas <FontAwesomeIcon icon={faArrowRotateLeft} className={styleNotes.faPlus}/>
+                        </Link>
                     </div>
-                </form>
+                    <div>
+                        <form onSubmit={onSubmit}/* action="/notes/new-note" method="POST" */>
+                            <div className={styleNotes.container}>
+                                <div>
+                                    <input type="text" name="title" onChange={handleChange} placeholder="Title" autoFocus></input>
+                                </div>
+                                <div>
+                                    <input type="text" name="description" onChange={handleChange} placeholder="Description" className={styleNotes.input}></input>
+                                </div>
+                                <button id="submit"  className={styleNotes.buttonAppTranslate} >Create</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
             </div>
+        </div>
     );
 }

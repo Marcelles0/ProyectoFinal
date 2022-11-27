@@ -170,30 +170,46 @@ router.post("/refresh", verifyRefreshToken, (req, res) => {
     }
 });
 
-router.patch("/dashboard/:id", async (req, res) => {
-    const { userName, email, password } = req.body;
+router.patch("/dashboard/:id", (req, res) => {
+    try {
+        // obtener el id del documento a actualizar
+        let id = req.params.id;
+        // obtener los datos a modificar
+        let data = req.body;
+        // recibir en respuesta el documento ya modificado
+        const options = { new: true };
+        Model.findByIdAndUpdate(id, data, options).then((result) =>
+          res.send(result)
+        );
+      } catch (error) {
+        res.status(400).json({ message: error.message });
+      }
+      
+    // const { userName, email, password } = req.body;
     // console.log("cambia datos");
-    console.log(req.params.id);
-    console.log(req.body);
-    res.status(200).json()
+    // console.log(req.params.id);
+    // console.log(req.body);
+    // res.status(200).json()
     // let id = req.params.id;
     // let data = req.body;
-    Model.findByIdAndUpdate(id, (err,response)=>{
-        if (err) {
-            res.status(400).json({
-                status: "failed",
-                error,
-                error: error.message,
-              });
-        }
-        res.status(200).json({
-            status: "succeeded",
-            data: {
-                user: response,
-            },
-            error: null,
-        })
-    })
+    // Model.findByIdAndUpdate(id, (err, response) => {
+    //     console.log(response);
+    //     if (err) {
+    //         res.status(400).json({
+    //             status: "failed",
+    //             error,
+    //             error: error.message,
+    //         });
+    //     } else {
+    //         res.status(200).json({
+    //             status: "succeeded",
+    //             data: {
+    //                 user: response,
+    //             },
+    //             error: null,
+    //         });
+    //     }
+    // });
     /* try {
         if (req.body.name === "" || req.body.email === "" || req.body.password === "") {
             return {

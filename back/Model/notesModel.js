@@ -9,10 +9,10 @@ const notesSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    /* userId: {
+    userId: {
         type: String,
         required: true
-    }, */
+    },
     date:{
         type: Date,
         default: Date.now

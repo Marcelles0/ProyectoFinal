@@ -6,7 +6,9 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import AppTranslate from "./pages/AppTranslate/AppTranslate";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import Notes from "./pages/Notes/Notes";
+import AllNotes from "./pages/Notes/AllNotes";
+import NewNote from "./pages/Notes/new-note";
+import EditNotes  from "./pages/Notes/EditNotes";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { AuthProvider } from "./components/AuthContext";
@@ -23,7 +25,9 @@ function App() {
         
         <Route path="/app-translate" element={<AuthProvider><AppTranslate /></AuthProvider>} />
         <Route path="/dashboard/:id" element={<AuthProvider><Dashboard /></AuthProvider>} />
-        <Route path="/notes" element={<Notes />} />
+        <Route path="/notes" element={<AuthProvider><AllNotes /></AuthProvider>} />
+        <Route path="/notes/new-note" element={<AuthProvider><NewNote /></AuthProvider>} />
+        <Route path="/notes/edit/:id" element={<AuthProvider><EditNotes /></AuthProvider>} />
       </Route>
     </Routes>
   );

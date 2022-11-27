@@ -5,10 +5,12 @@ import List from "./List";
 
 
 export default function Notes (){
+    let id = localStorage.getItem("userId").replace(/\"/g,"");
+    // console.log(id);
     
     const [notes,setNotes]= useState([])
     const getNotes = async ()=>{
-        const response = await fetch(`http://localhost:8000/notes`)
+        const response = await fetch(`http://localhost:8000/notes/${id}`)
         const result = await response.json()
         setNotes(result)
     }
@@ -18,52 +20,25 @@ export default function Notes (){
 
     return (
         <div>
-            {/* {errors ? (
-                <div></div>
-            ): <div></div>
-            } */}
-            
             <div className={styleNotes.section}>
                 <section>
                     <h1>Notes</h1>
                 </section>
                 <section className={styleNotes.sectionFlex}>
-                    <div className={styleNotes.sectionForms}>
+                    {/* <div className={styleNotes.sectionForms}>
                         < NewNotes />
-                    </div>
-                    
+                    </div> */}
                     <div className={styleNotes.containerNotes}>
-                        <div>Title
-                            <textarea type="text" name="title" placeholder="Title" ></textarea>
-                        </div>
-                        <div>Description
-                            <textarea  type="text" name="description" placeholder="Description" rows="4"></textarea>
-                        </div>
-                        <button id="submit" className={styleNotes.buttonNotes} >Edit</button>
-                        <button id="submit" className={styleNotes.buttonNotes} >Delete</button>
+                            <table className={styleNotes.table}>
+                                <tr>
+                                    <th colSpan="2">Notes</th>
+                                    <th>Edit/Delete</th>
+                                </tr>
+                        <List>
+                                <Notes />
+                        </List>
+                            </table>
                     </div>
-                    <div className={styleNotes.containerNotes}>
-                        <div>Title
-                            <textarea type="text" name="title" placeholder="Title" ></textarea>
-                        </div>
-                        <div>Description
-                            <textarea  type="text" name="description" placeholder="Description" rows="4"></textarea>
-                        </div>
-                        <button id="submit" className={styleNotes.buttonNotes} >Edit</button>
-                        <button id="submit" className={styleNotes.buttonNotes} >Delete</button>
-                    </div>
-                    <div className={styleNotes.containerNotes}>
-                        <div>Title
-                            <textarea type="text" name="title" placeholder="Title" ></textarea>
-                        </div>
-                        <div>Description
-                            <textarea  type="text" name="description" placeholder="Description" rows="4"></textarea>
-                        </div>
-                        <button id="submit" className={styleNotes.buttonNotes} >Edit</button>
-                        <button id="submit" className={styleNotes.buttonNotes} >Delete</button>
-                    </div>
-                    
-                    
                 </section>
             </div>
         </div>
