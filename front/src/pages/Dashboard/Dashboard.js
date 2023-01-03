@@ -40,7 +40,7 @@ export default function Dashboard() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formValues);
-        fetch(`http://localhost:8000/dashboard/:${params.id}`, {
+        fetch(`http://localhost:8000/login/dashboard/${params.id}`, {
             method: "PATCH",
             body: JSON.stringify(formValues),
             headers: {

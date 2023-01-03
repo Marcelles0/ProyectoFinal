@@ -178,6 +178,7 @@ router.patch("/dashboard/:id", (req, res) => {
         let data = req.body;
         // recibir en respuesta el documento ya modificado
         const options = { new: true };
+        console.log(id, data);
         Model.findByIdAndUpdate(id, data, options).then((result) =>
           res.send(result)
         );
@@ -185,94 +186,6 @@ router.patch("/dashboard/:id", (req, res) => {
         res.status(400).json({ message: error.message });
       }
       
-    // const { userName, email, password } = req.body;
-    // console.log("cambia datos");
-    // console.log(req.params.id);
-    // console.log(req.body);
-    // res.status(200).json()
-    // let id = req.params.id;
-    // let data = req.body;
-    // Model.findByIdAndUpdate(id, (err, response) => {
-    //     console.log(response);
-    //     if (err) {
-    //         res.status(400).json({
-    //             status: "failed",
-    //             error,
-    //             error: error.message,
-    //         });
-    //     } else {
-    //         res.status(200).json({
-    //             status: "succeeded",
-    //             data: {
-    //                 user: response,
-    //             },
-    //             error: null,
-    //         });
-    //     }
-    // });
-    /* try {
-        if (req.body.name === "" || req.body.email === "" || req.body.password === "") {
-            return {
-                message: "Debe rellenar todos los campos",
-                status: 401,
-            }
-        }else{
-
-            await Model.updateOne(
-                {id: req.params.id},
-                {
-                    userName: req.body.userName,
-                    email: req.body.userName,
-                    password: await bcrypt.hash(req.body.password, 10)
-                }
-            )
-        }
-    } catch{
-
-    }
- */
-
-    /* const { id } = req.params
-    const body = req.body
-    Model.updateOne(
-        { _id: parseId(req.params.id) },
-        body,
-        (err, docs) => {
-            res.send({
-                item: docs
-            })
-        }
-    ) */
-
-    // userName: req.body.userName,
-    // email: req.body.email,
-    // password: await bcrypt.hash(req.body.password, 10),
-    /* try {
-        if(req.body.userName!=''){
-            await Model.findByIdAndUpdate(req.params.id, req.body.userName);
-        }
-
-        if(req.body.email!=''){
-            await Model.findByIdAndUpdate(req.params.id, req.body.email);
-        }
-
-        if(req.body.password!=''){
-            await Model.findByIdAndUpdate(req.params.id, await bcrypt.hash(req.body.password, 10));
-        }
-
-        //await Model.findByIdAndUpdate(req.body.userName, req.body.email, passwordRequest);
-        res.status(200).json({
-            status: "succeeded",
-            data,
-            error: null,
-        })
-    } catch (error){
-        res.status(400).json({
-            status: "failed",
-            error,
-            error: error.message,
-          });
-    } */
 });
 
 router.delete("/:id", (req, res) => {

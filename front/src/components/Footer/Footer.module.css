@@ -5,6 +5,16 @@
     margin-bottom: 1.8em;
 }
 
+.content ul li::after/* , .login li::after */{
+    display:block;
+    content: '';
+    border-bottom: solid 3px white;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+.content ul li:hover:after/* , .login li:hover:after */ { transform: scaleX(1); }
+.content ul li.fromLeft:after/* , .login li.fromLeft:after */{  transform-origin:  0% 50%; }
+
 .wrapper {
     display: inline-flex;
     flex-wrap: wrap;
