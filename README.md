@@ -14,7 +14,7 @@ Para que la aplicación backend funcione, debemos crear un archivo llamado .env 
 ```env
 DATABASE_URL = mongodb://localhost:27017/Proyect
 SECRET = Pegar aquí el token secreto de JWT
-REFRESH_SECRET = Pegar aquí el token secreto de JWT
+REFRESH_SECRET = Pegar aquí el token de refresco secreto de JWT
 ```
 
 
