@@ -39,6 +39,69 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+
+# **Rutas**
+Las peticiones se lanzan de la siguiente manera:
+
+- INDEX
+    - Ruta: `localhost:3000`
+    - Método: `GET`
+    
+- CONTACT
+    - Ruta: `localhost:3000/contact`
+    - Método: `GET`
+
+- LOGIN
+    - Ruta: `localhost:3000/login`
+    - Método: `GET`
+    - Parámetro BODY:
+        - `email *<string>*`
+        - `password *<string>`
+
+- REGISTER
+    - Ruta: `localhost:3000/register
+    - Método: `POST`
+    - Parámetro BODY:
+        - `userName *<string>*`
+        - `email *<string>*`
+        - `password *<string>`
+
+- DASHBOARD
+    - Ruta: `localhost:3000/dashboard/:id`
+    - Método: `GET`
+    - Parámetro URL: `userId`
+    
+- APP
+    - Ruta: `localhost:3000/app-translate`
+    - Método: `GET`
+    
+- APP NOTE
+    - Ruta: `localhost:3000/notes/by_user/:id`
+    - Método: `GET`
+
+- CREATE NOTE
+    - Ruta: `localhost:3000/notes/new-note`
+    - Método: `POST`
+    - Parámetro BODY:
+        - `title *<string>*`
+        - `description *<string>*`
+
+- UPDATE NOTE
+    - Ruta: `localhost:8008/notes/edit/:id`
+    - Método: `PATCH`
+    - Parámetro URL: `noteId`
+    - Parámetro BODY:
+        - `title *<string>*`
+        - `description *<string>*`
+
+- DELETE NOTE
+    - Ruta: `localhost:3000/notes/:id`
+    - Método: `DELETE`
+    - Parámetro URL: `noteId`
+
+
+
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
